@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>性状分离比模拟实验</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        body{
+          text-align:center;
+        }
+
+        h1{
+          margin-top:12px;
+        }
+        .btn{
+          margin-left:auto;
+          margin-right:auto;
+          width: 56px;
+        }
+        label{
+        	font-size:20px;
+        }
+        .st div,.st2 div{
+            width:80px;
+            height:80px;
+            border-radius: 50%;
+            display:inline-block;
+            line-height: 30px;
+            font-size: 24px;
+         }
+         #count0,#ph{
+          background: red;
+         }
+         #count1{
+           background: #FF0097; 
+         }
+         #count2,#pl{
+          background: green;
+         }
+        #count3,#pt{
+          background: #A5A5C3;
+         }
+        div.container{
+          width: 206px;
+          border:3px solid red;
+          border-top:0;
+          padding:0;
+         /* margin:0 200px;*/
+          position:relative;
+          top:220px;
+          display:inline-block;
+          }
+        #container1{
+		  margin:0 200px 0 0;
+        }
+        #container2{
+		  margin:0 0 0 200px;
+        }
+        div.balls{
+          float:left;
+          width: 20px;
+          height: 20px;
+          background: red;
+          border-radius: 50%;
+          position:relative;
+        }
+        div.balls:nth-child(odd){
+          background: red;
+        }
+        div.balls:nth-child(even){
+          background: green;
+        }
+    
+    /*  div#ball15{
+          -webkit-animation:myfirst 1s; 
+          left:0;
+          top:0;
+        }
+    
+       @keyframes myfirst{
+          0%{position:relative;top:0;}
+          50%{position:relative;top:-200px;}
+          100%{position:relative;top:-200px;left:300px;}
+        } */
+      
+  
+    </style>
+  </head>
+  <body>
+      <h1>性状分离比模拟实验</h1>
+      <span type="button" class="btn btn-primary start">开始</span>
+      <span type="button" class="btn btn-danger stop">停止</span>
+      <br />
+      <div class="st">
+      <label>基因型统计：</label><br>
+      <div id="count0">0</div>
+      <div id="count1">0</div>
+      <div id="count2">0</div>
+      <div id="count3">0</div>
+      </div>
+      <div class="st2">
+      <label>表现型统计：</label><br>
+      <div id="ph">0</div>
+      <div id="pl">0</div>
+      <div id="pt">0</div>
+      </div>
+      <div class="container" id="container1">
+        <div id="ball1" class="balls">D</div>
+        <div id="ball2" class="balls">d</div>
+        <div id="ball3" class="balls">D</div>
+        <div id="ball4" class="balls">d</div>
+        <div id="ball5" class="balls">D</div>
+        <div id="ball6" class="balls">d</div>
+        <div id="ball7" class="balls">D</div>
+        <div id="ball8" class="balls">d</div>
+        <div id="ball9" class="balls">D</div>
+        <div id="ball10" class="balls">d</div>
+        <div id="ball11" class="balls">D</div>
+        <div id="ball12" class="balls">d</div>
+        <div id="ball13" class="balls">D</div>
+        <div id="ball14" class="balls">d</div>
+        <div id="ball15" class="balls">D</div>
+        <div id="ball16" class="balls">d</div>
+        <div id="ball17" class="balls">D</div>
+        <div id="ball18" class="balls">d</div>
+        <div id="ball19" class="balls">D</div>
+        <div id="ball20" class="balls">d</div>
+        <div id="ball21" class="balls">D</div>
+        <div id="ball22" class="balls">d</div>
+        <div id="ball23" class="balls">D</div>
+        <div id="ball24" class="balls">d</div>
+        <div id="ball25" class="balls">D</div>
+        <div id="ball26" class="balls">d</div>
+        <div id="ball27" class="balls">D</div>
+        <div id="ball28" class="balls">d</div>
+        <div id="ball29" class="balls">D</div>
+        <div id="ball30" class="balls">d</div>
+        <div id="ball31" class="balls">D</div>
+        <div id="ball32" class="balls">d</div>
+        <div id="ball33" class="balls">D</div>
+        <div id="ball34" class="balls">d</div>
+        <div id="ball35" class="balls">D</div>
+        <div id="ball36" class="balls">d</div>
+        <div id="ball37" class="balls">D</div>
+        <div id="ball38" class="balls">d</div>
+        <div id="ball39" class="balls">D</div>
+        <div id="ball40" class="balls">d</div>
+        <div id="ball41" class="balls">D</div>
+        <div id="ball42" class="balls">d</div>
+        <div id="ball43" class="balls">D</div>
+        <div id="ball44" class="balls">d</div>
+        <div id="ball45" class="balls">D</div>
+        <div id="ball46" class="balls">d</div>
+        <div id="ball47" class="balls">D</div>
+        <div id="ball48" class="balls">d</div>
+        <div id="ball49" class="balls">D</div>
+        <div id="ball50" class="balls">d</div>
+      </div>
+      <div class="container" id="container2">
+        <div id="ball51" class="balls">D</div>
+        <div id="ball52" class="balls">d</div>
+        <div id="ball53" class="balls">D</div>
+        <div id="ball54" class="balls">d</div>
+        <div id="ball55" class="balls">D</div>
+        <div id="ball56" class="balls">d</div>
+        <div id="ball57" class="balls">D</div>
+        <div id="ball58" class="balls">d</div>
+        <div id="ball59" class="balls">D</div>
+        <div id="ball60" class="balls">d</div>
+        <div id="ball61" class="balls">D</div>
+        <div id="ball62" class="balls">d</div>
+        <div id="ball63" class="balls">D</div>
+        <div id="ball64" class="balls">d</div>
+        <div id="ball65" class="balls">D</div>
+        <div id="ball66" class="balls">d</div>
+        <div id="ball67" class="balls">D</div>
+        <div id="ball68" class="balls">d</div>
+        <div id="ball69" class="balls">D</div>
+        <div id="ball70" class="balls">d</div>
+        <div id="ball71" class="balls">D</div>
+        <div id="ball72" class="balls">d</div>
+        <div id="ball73" class="balls">D</div>
+        <div id="ball74" class="balls">d</div>
+        <div id="ball75" class="balls">D</div>
+        <div id="ball76" class="balls">d</div>
+        <div id="ball77" class="balls">D</div>
+        <div id="ball78" class="balls">d</div>
+        <div id="ball79" class="balls">D</div>
+        <div id="ball80" class="balls">d</div>
+        <div id="ball81" class="balls">D</div>
+        <div id="ball82" class="balls">d</div>
+        <div id="ball83" class="balls">D</div>
+        <div id="ball84" class="balls">d</div>
+        <div id="ball85" class="balls">D</div>
+        <div id="ball86" class="balls">d</div>
+        <div id="ball87" class="balls">D</div>
+        <div id="ball88" class="balls">d</div>
+        <div id="ball89" class="balls">D</div>
+        <div id="ball90" class="balls">d</div>
+        <div id="ball91" class="balls">D</div>
+        <div id="ball92" class="balls">d</div>
+        <div id="ball93" class="balls">D</div>
+        <div id="ball94" class="balls">d</div>
+        <div id="ball95" class="balls">D</div>
+        <div id="ball96" class="balls">d</div>
+        <div id="ball97" class="balls">D</div>
+        <div id="ball98" class="balls">d</div>
+        <div id="ball99" class="balls">D</div>
+        <div id="ball100" class="balls">d</div>
+      </div>
+         
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+     $(".start").click(function start(){
+    <!--先执行一次-->
+
+
+
+    <!--把小球放入数组中，便于操作-->
+      var d= document;
+      var balls=new Array();
+      var count=[0,0,0];
+      for (i=1;i<101;i++){
+        balls[i]=d.getElementById("ball"+i);
+      }
+    <!--每隔一定时间随机选出2个小球-->
+      var int=setInterval(function (){
+      /*alert(balls[3]);
+      alert(d);*/
+      var i1 = Math.floor(Math.random() * (balls.length-1)/2)+1;  
+      var i2 = Math.floor(Math.random() * (balls.length-1)/2)+51;
+      if(i1%10!=0){
+      var leftdst=203+200-(i1%10-1)*20;
+      } else {
+      var leftdst=203+20;
+      }
+      if(i2%10!=0){
+      var rightdst=-(203+200-(10-i2%10)*20);
+      } else {
+      var rightdst=-(203+200);
+      }
+      /*alert(leftdst);
+      alert(rightdst);*/
+      /*-0.0001是为了不让整数如10、20等进到下一行*/
+      var topl=-(200+Math.floor(i1/10-0.0001)*20);
+      var topr=-(200+Math.floor(i2/10-5-0.0001)*20);
+      var geneType=balls[i1].innerHTML+balls[i2].innerHTML;
+      /*alert(i1);*/
+     <!--第一个小球动画-->
+      $(balls[i1]).animate({top:topl+"px"},1000).animate({left:leftdst+"px"},1000)
+      .animate({left:"0",top:"0"},1000);
+    <!--第二个小球动画-->
+      $(balls[i2]).animate({top:topr+"px"},1000).animate({left:rightdst+"px"},1000,function(){
+        switch (geneType) {
+        case "DD":
+          count[0]+=1; //DD个体数
+          /*alert("DD:"+count[0]);*/
+          break;
+        case "Dd":
+          count[1]+=1; //Dd个体数
+          /*alert("Dd:"+count[1]);*/
+          break;
+        case "dD":
+          count[1]+=1;
+          /*alert("Dd:"+count[1]);*/
+          break;
+        case "dd":
+          count[2]+=1; //dd个体数
+          /*alert("dd:"+count[2]);*/
+          break;
+      }
+      <!--jQuery没有innerHTML，只有html-->
+
+      /*alert(count[0]);*/
+      /*alert(document.getElementById("count0").innerHTML);*/
+      /*alert($("#count0").html());*/
+      /*alert($("#count0")[0].innerHTML);*/
+      /*alert($("#count0").text());*/
+      /*d.getElementById("#count0").innerHTML=count[0];*/
+      /*alert(d.getElementById("#count0").innerHTML);*/
+      <!--基因型统计-->
+      var totalc=count[0]+count[1]+count[2]; //个体总数
+      var DD=Math.round(count[0]*100/totalc); //DD的百分比取整
+      var Dd=Math.round(count[1]*100/totalc); //Dd的百分比取整
+      var dd=100-DD-Dd;
+      /*alert(DD);
+      alert(Dd);
+      alert(dd);*/
+      $("#count0").html(count[0]+"<br>"+"("+DD+"%)");
+      $("#count1").html(count[1]+"<br>"+"("+Dd+"%)");
+      $("#count2").html(count[2]+"<br>"+"("+dd+"%)");
+      $("#count3").html(totalc+"<br>"+"(100%)");
+      <!--表现型统计-->
+      var ph=DD+Dd; //显性个体的百分比
+      var pl=dd;    //隐性个体的百分比（=dd基因型的百分比）
+      $("#ph").html(count[0]+count[1]+"<br>"+"("+ph+"%)");
+      $("#pl").html(count[2]+"<br>"+"("+dd+"%)");
+      $("#pt").html(totalc+"<br>"+"(100%)");
+      })
+      .animate({left:"0",top:"0"},1000);
+    },3000);
+
+      $(".stop").click(function (){
+        /*alert(123);*/
+        clearInterval(int);
+    });
+
+     
+    });
+
+
+    </script>
+    
+
+</body>
+</html>
